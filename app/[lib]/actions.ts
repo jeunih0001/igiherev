@@ -7,11 +7,16 @@ import { Article, ArticlePreview, baseUrl } from "./schema";
 export async function getHtml(url: string): Promise<string>{
   const response = await axios.get(url, 
     {
+      
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
-      }
+        'Accept': 'application/json, text/plain, */*',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+        'Accept-Encoding': 'gzip, compress, deflate, br',
+        'Host': 'igihe.com',
+        'Connection': 'keep-alive'      }
     }
   )
+  console.log(response)
   return response.data
 }
 
