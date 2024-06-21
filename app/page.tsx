@@ -7,7 +7,7 @@ import Image from "next/image";
 export const revalidate = 3600;
 
 export default async function Home() {
-  const html = await getHtml(baseUrl)
+  const html = await getHtml("https://igihe.com/index.php")
   const [headlines, articles] = await Promise.all([
     parseHeadlines(html),
     parseArticles(html)
